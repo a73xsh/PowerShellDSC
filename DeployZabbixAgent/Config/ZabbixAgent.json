@@ -1,0 +1,28 @@
+﻿[
+    {
+        "InstallDir": "C:\\Zabbix",
+        "IncludeDir": "C:\\Zabbix\\zabbix_agent.d",
+        "ScriptsDir": "C:\\Zabbix\\Scripts",
+        "SourceShare": "\\\\192.168.86.171\\Software",
+        "AgentFile": "zabbix_agent-5.0.1-windows-amd64.zip",
+        "AgentConfig": [
+            {
+                "LogFile": "C:\\Zabbix\\zabbix_agentd.log",
+                "Server": "10.35.12.99",
+                "LogFileSize": "100",
+                "DebugLevel": "3",
+                "EnableRemoteCommands": "0",
+                "LogRemoteCommands": "0",
+                "ListenPort": "10050",
+                "StartAgents": "3",
+                "ServerActive": "10.35.12.99",
+                "RefreshActiveChecks": "120",
+                "BufferSend": "5",
+                "BufferSize": "100",
+                "MaxLinesPerSecond": "100",
+                "Timeout": "15",
+                "UnsafeUserParameters": "1"
+            }
+        ]
+    }
+]
