@@ -1,0 +1,15 @@
+[
+    {
+    
+        "HostsActivation": [
+            {
+                "ProductKey": "xxxxx"
+            }
+        ],
+        "MgmtActivation":[
+            {
+                "ProductKey": "xxxxx"
+            }
+        ]
+    }
+]

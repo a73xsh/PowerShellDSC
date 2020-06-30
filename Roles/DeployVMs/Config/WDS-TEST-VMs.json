@@ -1,0 +1,42 @@
+[
+    {
+        "VMS" :[
+            {
+                "vmname": "WDS01.dev.lab",
+                "ComputerName": "WDS01",
+                "domain": "dev.lab",
+                "parentvhd": "H:\\Hyper-V\\Master\\Win2019_GUI_UN.vhdx",
+                "ProcessorCount": "1",
+                "MemoryStartupBytes": "4GB",
+                "MemoryMinimumBytes": "4GB",
+                "MaximumMemory": "4Gb",
+                "State": "Running",
+                "Path": "H:\\Hyper-V",
+                "VMNetworkAdapters": [
+                    {
+                        "Ensure": "Present",
+                        "ID": "WDS01-dev.lab",
+                        "Name": "WDS01-dev.lab",
+                        "SwitchName": "ExternalSwitch",
+                        "VlanId": "0",
+                        "IpAddress": "192.168.86.47",
+                        "Subnet": "255.255.255.0",
+                        "DefaultGateway": "192.168.86.1",
+                        "DnsServer": "192.168.86.171"
+                    }
+                ],
+                "VMScsiControllers": [
+                    {
+                        "Ensure": "Present",
+                        "SCSIControllerNumber": 0,
+                        "ControllerLocation": 1,
+                        "Name": "WDS01.dev.lab_disk2.vhdx",
+                        "Generation": "vhdx",
+                        "MaximumSizeBytes": "5Gb",
+                        "Path": "H:\\Hyper-V\\WDS01.dev.lab"
+                    }
+                ]
+            }
+        ]
+    }
+]

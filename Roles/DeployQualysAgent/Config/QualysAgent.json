@@ -1,0 +1,18 @@
+[
+    {
+        "SourceShare": "\\\\10.34.50.48\\DSCResources\\Packages",
+        "AgentFile": "QualysCloudAgent.exe",
+        "ProdSite": [
+            {
+                "CustomerId": "{xxxxx-xxxx-xxx-xxxx-xxxxxx}",
+                "ActivationId": "{xxxxx-xxxx-xxx-xxxx-xxxxxx}"
+            }
+        ],
+        "DevSite":[
+            {
+                "CustomerId": "{xxxxx-xxxx-xxx-xxxx-xxxxxx}",
+                "ActivationId": "{xxxxx-xxxx-xxx-xxxx-xxxxxx}"
+            }
+        ]
+    }
+]

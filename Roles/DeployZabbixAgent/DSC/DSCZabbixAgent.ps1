@@ -1,9 +1,7 @@
 param (
     $ConfPath
 )
-$ZBXConfigContent = (Get-Content .\Config\ZabbixAgent.json | ConvertFrom-Json)
-
-
+$ZBXConfigContent = (Get-Content .\Roles\DeployZabbixAgent\Config\ZabbixAgent.json | ConvertFrom-Json)
 
 Configuration DeployZabbixAgent
 {
@@ -222,7 +220,7 @@ UnsafeUserParameters=$($ZBXConfigContent.AgentConfig.UnsafeUserParameters)
 
         #Remove UTF BOM
         Script RemoveUTFBOM{
-            testScript = { 
+            testScript = {
                 #$ZBXCfgPath = $using:ZBXConfigContent.InstallDir + "\conf\zabbix_agentd.conf"
                 <# [bool](Test-path $ZBXCfgPath -ErrorAction SilentlyContinue)  #>
                 #Test-Path  $ZBXCfgPath
@@ -232,12 +230,12 @@ UnsafeUserParameters=$($ZBXConfigContent.AgentConfig.UnsafeUserParameters)
                 $ZBXCfgPath = $using:ZBXConfigContent.InstallDir + "\conf\zabbix_agentd.conf"
                 [System.IO.File]::WriteAllLines(
                     $ZBXCfgPath,
-                    (Get-Content -Path $ZBXCfgPath), 
+                    (Get-Content -Path $ZBXCfgPath),
                     (New-Object System.Text.UTF8Encoding($False))
                     )
             }
-            getscript  = { 
-                @{Result = write-verbose "Encoding change to ANSI"} 
+            getscript  = {
+                @{Result = write-verbose "Encoding change to ANSI"}
             }
             DEpendsOn = '[File]ConfigFile'
         }
@@ -247,10 +245,10 @@ UnsafeUserParameters=$($ZBXConfigContent.AgentConfig.UnsafeUserParameters)
             setscript  = {
                 $ZBXExePath = $using:ZBXConfigContent.InstallDir + "\bin\zabbix_agentd.exe"
                 $ZBXCfgPath = $using:ZBXConfigContent.InstallDir + "\conf\zabbix_agentd.conf"
-                cmd.exe /c "$ZBXExePath --config $ZBXCfgPath --install >nul 2>&1" 
+                cmd.exe /c "$ZBXExePath --config $ZBXCfgPath --install >nul 2>&1"
             }
             getscript  = { @{Result = (Get-Service "Zabbix Agent" -ErrorAction SilentlyContinue) } }
-        } 
+        }
 
     }
 }

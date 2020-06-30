@@ -1,0 +1,16 @@
+[
+    {
+        "SourceShare": "\\\\10.34.50.48\\DSCResources\\Packages",
+        
+        "ProdSite": [
+            {
+                "AgentFile": "epo-magent563.zip"
+            }
+        ],
+        "DevSite": [
+            {
+                "AgentFile": "av01-dev-epo-magent563.zip"
+            }
+        ]
+    }
+]
